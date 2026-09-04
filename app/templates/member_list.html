@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <center>
+    <h2>MEMBER LIST</h2>
+    
+    <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Joined Date</th>
+        </tr>
+
+        {% for member in members %}
+
+        <tr>
+            <td>{{ member.id }}</td>
+            <td>{{ member.name }}</td>
+            <td>{{ member.email }}</td>
+            <td>{{ member.phone_number }}</td>
+            <td>{{ member.joined_date }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+   
+    <br>
+    <br>
+    <a href="{% url 'member_form' %}"><button>Add Members</button></a><br>
+    <br>
+    <br>
+    <a href="{% url 'home' %}">Back to Home</a>
+    </center>
+    {% endblock %}
+</body>
+</html>

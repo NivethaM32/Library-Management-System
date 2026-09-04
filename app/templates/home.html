@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    {% block content %}
+    <center>
+    <table border="2">
+        <h2>RECENT BOOKS </h2>
+        <thead>
+            <th>Sno</th>
+            <th>Books</th>
+        </thead>
+        <tbody>
+            {% for i in books %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.title}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <h3>TOTAL BOOKS AVAILABLE: {{total_books}}</h3>
+    </center>
+    {% endblock %}
+</body>
+</html>

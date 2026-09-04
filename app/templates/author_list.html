@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block content %}
+    <center>
+    <h2>AUTHOR LIST</h2>
+    
+    <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Bio</th>
+            <th>Birth Date</th>
+        </tr>
+
+        {% for author in authors %}
+
+        <tr>
+
+            <td>{{ author.id }}</td>
+
+            <td>{{ author.name }}</td>
+
+            <td>{{ author.bio }}</td>
+
+            <td>{{ author.birth_date }}</td>
+
+        </tr>
+
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    {% endblock %}
+    </center>
+</body>
+</html>

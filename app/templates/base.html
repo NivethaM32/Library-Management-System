@@ -1,0 +1,35 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'base.css'%}">
+</head>
+<body>
+  
+    <hr>
+    <nav class="navbar">
+    <div class="tit">
+        <h2>LIBRARY MANAGEMENT SYSTEM</h2>
+    </div>
+
+    <div class="links">
+    <a href="{%url 'home' %}"><h2>HOME</h2></a>
+    <a href="{%url 'book_list' %}"><h2>BOOK</h2></a>
+    <a href="{%url 'author_list' %}"><h2>AUTHORS</h2></a>
+    <a href="{%url 'member_list' %}"><h2>MEMBERS</h2></a>
+    
+    </div>
+    </nav>
+    <hr>
+    <div class="con">
+    {% block content %}
+    <img src="https://cdn.pixabay.com/photo/2016/02/16/21/07/christmas-background-1204029_1280.jpg" 
+        height="60%" width="100%" alt="" class="firstImage" />
+    {% endblock %}
+    </div>
+</body>
+</html>
